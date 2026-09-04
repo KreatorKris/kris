@@ -4,6 +4,11 @@ function setup() {
 
 function draw() {
   background(255,0,0);
-
+strokeWeight(3);
+  stroke("purple")
+fill("green")
 circle(450,300,200);
+strokeWeight(20);
+fill("blue")
+rect(340,250,160,170)
 }
