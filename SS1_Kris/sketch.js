@@ -1,3 +1,7 @@
+/*Kris M.
+Title: 
+
+*/
 function setup() {
   createCanvas(600, 600);
 }
@@ -7,8 +11,8 @@ function draw() {
 strokeWeight(3);
   stroke("purple")
 fill("green")
-circle(450,300,200);
+circle(560,560,200);
 strokeWeight(20);
 fill("blue")
-rect(340,250,160,170)
+rect(340,250,160,180)
 }
