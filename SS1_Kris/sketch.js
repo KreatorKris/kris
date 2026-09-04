@@ -14,5 +14,8 @@ fill("green")
 circle(560,560,200);
 strokeWeight(20);
 fill("blue")
-rect(340,250,160,180)
+rect(340,250,160,180);
+strokeWeight(15)
+fill("yellow")
+triangle()
 }
