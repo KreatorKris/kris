@@ -30,4 +30,10 @@ fill("yellow")
 strokeWeight(10)
 stroke("black")
 line(600,430,0,430)
+
+/*grass*/
+strokeWeight(6)
+stroke("green")
+fill("green")
+rect(0,600,200,300)
 }
