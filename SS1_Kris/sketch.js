@@ -32,9 +32,7 @@ fill("green")
 rect(0,100,100,100)
 rect(0,150,150,150)
 rect(35,65,150,150)
-rect(0,25,150,150)
-
-/*apples in tree*/
+rect(0,25,150,150)/*apples in tree*/
 strokeWeight(3)
 stroke(100,0,0)
 fill("red")
@@ -52,7 +50,6 @@ fill("yellow");
 strokeWeight(10);
 stroke("black");
 line(600,430,0,430);
-
 /*grass*/
 strokeWeight(6);
 stroke("green");
