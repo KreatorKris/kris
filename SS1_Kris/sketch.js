@@ -7,15 +7,27 @@ function setup() {
 }
 
 function draw() {
-  background(255,0,255);
-strokeWeight(3);
-  stroke("purple")
-fill("green")
-circle(560,560,200);
-strokeWeight(20);
-fill("blue")
-rect(340,250,160,180);
+  background(0,150,5000);
+
+/*this is the sun*/
+  strokeWeight(20);
+  stroke("orange")
+fill("yellow")
+circle(560,60,200);
+
+/*this is the tree*/
+strokeWeight(8);
+stroke("black")
+fill("brown")
+rect(0,194,100,230);
+rect()
+
+/*this is the line that 
+seperates the sky and
+ the grass*/
 strokeWeight(15)
 fill("yellow")
-triangle()
+strokeWeight(10)
+stroke("black")
+line(600,430,0,430)
 }
