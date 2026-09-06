@@ -7,7 +7,7 @@ function setup() {
 }
 
 function draw() {
-  background(255,0,0);
+  background(255,0,255);
 strokeWeight(3);
   stroke("purple")
 fill("green")
