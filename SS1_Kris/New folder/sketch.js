@@ -6,7 +6,7 @@ function draw() {
   background("grey");
 stroke("black")
   strokeWeight(15)
-  line(250,250,50,50)
+  line(250,250,50,250)
 
 
 
