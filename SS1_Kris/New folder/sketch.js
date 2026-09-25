@@ -1,19 +1,22 @@
+const canvasSize = 700;
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(700, 700);
 }
 
 function draw() {
-  background("grey");
-stroke("black")
-  strokeWeight(15)
-  line(250,250,50,250)
+background("blue")
 
-
-
-
-
-
-
+let houseLeft = 10;
+let houseTop = 50;
+let houseSize = 100;
+let roofIn = 20;
+let houseRight = houseLeft + houseSize;
+square (houseLeft, houseTop, houseSize);
+fill("red");
+quad (houseLeft, houseTop,
+    houseRight, houseTop,
+    houseRight - roofIn, houseTop - roofRin,
+    houseLeft + roofIn, houseTop - roofIn)
 
 
 
