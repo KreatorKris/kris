@@ -3,6 +3,11 @@ function setup() {
 }
 
 function draw() {
-  background(220);
-  circle (450,70,90)
+  background("grey");
+ 
+  circle(450,70,90);
+  
+  square(60,45,55,0);
+
+
 }
