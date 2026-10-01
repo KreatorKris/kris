@@ -11,7 +11,7 @@ function setup() {
   background("grey");
 }
  
-function draw() {
+function draw (){
  
  stroke("purple");
  strokeWeight(3);
@@ -26,7 +26,7 @@ function draw() {
   if (x < 0 || x > width) xSpeed *= -1;
   if (y < 0 || y > height) ySpeed *= -1;
 
-
+ 
   //these are the shapes and their colors.
    fill("yellow");
     circle(x + 250, y - 100, 90);
