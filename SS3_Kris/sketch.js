@@ -23,7 +23,6 @@ function setup() {
   if (y < 0 || y > height) ySpeed *= -1;
 
 
-
   //these are the shapes
   circle(x + 250, y - 100, 90);
   square(x - 140, y - 125, 55);
