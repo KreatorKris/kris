@@ -1,30 +1,66 @@
 /*Kris M.
 Title: Bouncing Shapes
-Concept: Random shapes bouncing randomly within the canvas.
+Concept: Random shapes bouncing within the canvas.
 */
 
+
+//Declaring the variables
 let x = 200, y = 200;
-  let XSpeed = 3, ySpeed = 2;
+  let XSpeed = 3;
+  let YSpeed = 2;
+ 
+
+function StreamerDrawer(StreamerX){
+  stroke("purple");
+  strokeWeight(5);
+  fill(0,0)
+  circle(StreamerX,1,80)
+}
+
+ function drawerstreamerbottom(StreamerX){
+  stroke("purple");
+  strokeWeight(5);
+  fill(0,0)
+circle(StreamerX,600,80)
+  
+
+
+ }
+
+function mousePressed(){
+  XSpeed = random(-10,10);
+  YSpeed = random(-10,10);
+  x = mouseX;
+  y = mouseY;
+}
+
 
 function setup() {
   createCanvas(600, 600);
-  background("grey");
+  
 }
  
 function draw (){
- 
- stroke("purple");
- strokeWeight(3);
+ background("grey");
+ StreamerDrawer(40);
+ StreamerDrawer(120);
+ StreamerDrawer(200);
+ StreamerDrawer(280);
+ StreamerDrawer(360);
+ StreamerDrawer(440);
 
+ drawerstreamerbottom(40);
+ drawerstreamerbottom(120);
+ drawerstreamerbottom(200);
+ drawerstreamerbottom(280);
+ drawerstreamerbottom(360);
+ drawerstreamerbottom(440);
   //Motion
-  x += XSpeed;
-  y += ySpeed;
-  let accChangeX = 0;
-  let accChangeY = 0;
+  x = x + XSpeed;
+  y = y + YSpeed;
   
-  //Bounce
-  if (x < 0 || x > width) xSpeed *= -1;
-  if (y < 0 || y > height) ySpeed *= -1;
+  
+  
 
  
   //these are the shapes and their colors.
@@ -34,7 +70,13 @@ function draw (){
   square(x - 140, y - 125, 55);
   fill("blue")
   triangle(x, y - 80, x - 41, y + 8, x + 54, y + 8);
+}
  
 
 
-}
+
+
+
+
+
+
