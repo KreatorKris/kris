@@ -1,6 +1,7 @@
 /*Kris M.
-Title: Bouncing Shapes
-Concept: Random shapes bouncing within the canvas.
+Title: Moving Shapes
+Concept: Random shapes moving
+out of the canvas.
 */
 
 
