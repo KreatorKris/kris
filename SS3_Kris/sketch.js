@@ -46,13 +46,15 @@ function setup() {
  
 function draw (){
   //The purple streamers
- background("grey");
+ background("black");
  StreamerDrawer(40);
  StreamerDrawer(120);
  StreamerDrawer(200);
  StreamerDrawer(280);
  StreamerDrawer(360);
  StreamerDrawer(440);
+ StreamerDrawer(520);
+ StreamerDrawer(600);
 
  drawerstreamerbottom(40);
  drawerstreamerbottom(120);
@@ -60,6 +62,8 @@ function draw (){
  drawerstreamerbottom(280);
  drawerstreamerbottom(360);
  drawerstreamerbottom(440);
+ drawerstreamerbottom(520);
+ drawerstreamerbottom(600);
   //Motion
   x = x + XSpeed;
   y = y + YSpeed;
