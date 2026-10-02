@@ -9,7 +9,7 @@ let x = 200, y = 200;
   let XSpeed = 3;
   let YSpeed = 2;
  
-
+//custom functions for the streamers
 function StreamerDrawer(StreamerX){
   stroke("purple");
   strokeWeight(5);
@@ -28,6 +28,9 @@ circle(StreamerX,600,80)
  }
 
 function mousePressed(){
+ /*using the mouse button to click makes the
+ shapes go in a random
+ direction and speed*/
   XSpeed = random(-10,10);
   YSpeed = random(-10,10);
   x = mouseX;
@@ -41,6 +44,7 @@ function setup() {
 }
  
 function draw (){
+  //The purple streamers
  background("grey");
  StreamerDrawer(40);
  StreamerDrawer(120);
