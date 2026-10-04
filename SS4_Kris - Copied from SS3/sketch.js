@@ -143,7 +143,10 @@ function draw (){
   triangle(triangleX, triangleY - 80, triangleX - 41, triangleY + 8, triangleX + 54, triangleY + 8);
 }
  /*when you press the mouse, each color of the shape will
- be randomized into different colors*/
+ be randomized into different colors. 
+ i looked up "random color changing p5js reference" and used the refrence
+ that came up, but i had to use spefifc colors because the random cmd
+ wasnt working. */ 
   function mousePressed(){
   circleColor = random(["red", "blue", "purple", "orange", "green"])
   squareColor = random(["red", "blue", "purple", "orange", "green"])
