@@ -6,10 +6,28 @@ out of the canvas.
 
 
 //Declaring the variables
-let x = 200, y = 200;
-  let XSpeed = 3;
-  let YSpeed = 2;
- 
+/* Instead of declaring all together
+ like SS3, here, will be seperate.*/
+
+// circle
+let circleX = 300;
+let circleY = 200;
+let circleXSpeed = 3;
+let circleYSpeed = 2;
+
+//sqaure
+let squareX = 150;
+let squareY = 300;
+let squareXSpeed = 2;
+let squareYSpeed = 3;
+
+//triangle
+let triangleX = 400;
+let triangleY = 400;
+let triangleXSpeed = -3;
+let triangleYSpeed = 2;
+
+
 //custom functions for the streamers
 function StreamerDrawer(StreamerX){
   stroke("purple");
@@ -28,15 +46,7 @@ circle(StreamerX,600,80)
 
  }
 
-function mousePressed(){
- /*using the mouse button to click makes the
- shapes go in a random
- direction and speed*/
-  XSpeed = random(-10,10);
-  YSpeed = random(-10,10);
-  x = mouseX;
-  y = mouseY;
-}
+
 
 
 function setup() {
@@ -46,7 +56,7 @@ function setup() {
  
 function draw (){
   //The purple streamers
- background("black");
+ background("white");
  StreamerDrawer(40);
  StreamerDrawer(120);
  StreamerDrawer(200);
@@ -64,21 +74,27 @@ function draw (){
  drawerstreamerbottom(440);
  drawerstreamerbottom(520);
  drawerstreamerbottom(600);
-  //Motion
-  x = x + XSpeed;
-  y = y + YSpeed;
-  
-  
-  
 
- 
+  //moving the circle
+  circleX = circleX + circleXSpeed;
+  circleY = circleY + circleYSpeed;
+
+  //bouncing the circle
+  if (circleX >= width -45 || circleX <= 45 ) {
+    circleXSpeed = -circleXSpeed;
+  }
+  
+  if (circleY >= height - 45 || circleY <= 45) {
+    circleYSpeed = -circleYSpeed;
+  }
+  
   //these are the shapes and their colors.
    fill("yellow");
-    circle(x + 250, y - 100, 90);
+    circle(circleX, circleY, 90);
   fill("green")
-  square(x - 140, y - 125, 55);
+  square(squareX, squareY, 55);
   fill("blue")
-  triangle(x, y - 80, x - 41, y + 8, x + 54, y + 8);
+  triangle(triangleX, triangleY - 80, triangleX - 41, triangleY + 8, triangle + 54, triangleY + 8);
 }
  
 
