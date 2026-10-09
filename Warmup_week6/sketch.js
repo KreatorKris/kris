@@ -5,7 +5,7 @@ function setup() {
 let x = 200
 
 function draw() {
-  background("pink");
+  background("orange");
 strokeWeight(2)
 stroke("black")
 rect(200,300,300,200)
