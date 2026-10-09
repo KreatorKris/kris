@@ -36,6 +36,7 @@ let triangleY = 400;
 let triangleXSpeed = -3;
 let triangleYSpeed = 2;
 
+//the color variables
 let circleColor= "yellow";
 let squareColor= "green";
 let triangleColor= "blue";
