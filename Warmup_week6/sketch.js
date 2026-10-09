@@ -2,6 +2,8 @@ function setup() {
   createCanvas(600,600);
 }
 
+let x = 200
+
 function draw() {
   background("pink");
 strokeWeight(2)
@@ -11,12 +13,7 @@ rect(200,300,300,200)
 }
 
 mousePressed(){
-fill("random")
-
+fill("random")  
+if (x = 200 then y = 300)
 
 }
-
-
-
-
-
