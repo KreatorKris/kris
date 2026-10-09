@@ -56,12 +56,7 @@ function StreamerDrawer(StreamerX){
   fill(0,0)
 circle(StreamerX,600,80)
   
-
-
  }
-
-
-
 
 function setup() {
   createCanvas(600, 600);
