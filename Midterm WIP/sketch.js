@@ -17,6 +17,9 @@ a circle, square and a triangle bouncing within the canvas like those old tv / d
 //Will be at the beginning to start/play
 let gameState = "START";
 
+//The gif
+let backgroundGif;
+
 //Declaring the variables
 /* Instead of declaring all together
  like SS3, here, will be seperate.*/
@@ -44,7 +47,6 @@ let circleColor= "yellow";
 let squareColor= "green";
 let triangleColor= "blue";
 
-
 //custom functions for the streamers
 function StreamerDrawer(StreamerX){
   stroke("purple");
@@ -63,15 +65,21 @@ circle(StreamerX,600,80)
 
 function setup() {
   createCanvas(600, 600);
+
+  //the gif
+  backgroundGif = createImg("static.gif");
+  backgroundGif.position(200, 200);
+  backgroundGif.size(200, 200);
+  backgroundGif.style("opacity", "0.5");
+
 }
  /* this is going to be drawing very quickly, 
  which makes the shapes move*/
 function draw (){
-  if gameState = "START" 
-  
-  
+  background("black");
+
+
   //The purple streamers aka custom functions
- background("black");
  StreamerDrawer(40);
  StreamerDrawer(120);
  StreamerDrawer(200);
@@ -143,6 +151,12 @@ function draw (){
 
   fill(triangleColor)
   triangle(triangleX, triangleY - 80, triangleX - 41, triangleY + 8, triangleX + 54, triangleY + 8);
+
+  //small line that follows mouse(test)
+  stroke("white");
+  strokeWeight(10);
+  line(mouseX, mouseY, mouseX + 25, mouseY);
+
 }
  /*when you press the mouse, each color of the shape will
  be randomized into different colors. 
