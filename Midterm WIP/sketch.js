@@ -237,26 +237,22 @@ function draw() {
   
   /*(Found this in the calculation
   section of p5js reference while
-  testing some stuff cuz nothing was working b4)*/
-
-  let hitCircle = dist(mouseX, mouseY, circleX, circleY) < 45;
-
-  let hitSquare =
-    mouseX >= squareX &&
-    mouseX <= squareX + 55 &&
-    mouseY >= squareY &&
-    mouseY <= squareY + 55;
-
-  let hitTriangle =
-    mouseX >= triangleX - 41 &&
+  testing some stuff cuz nothing was working b4)
+  
+  NTS: this helps with detecting
+  the collision of the shapes
+  and mouse to see if they touch,
+  which makes u lose the game
+  */
+  //game over if the mouse touches a shape
+  if (dist(mouseX, mouseY, circleX, circleY) < 45 || mouseX >= squareX &&
+  mouseX <= squareX + 55 &&
+  mouseY >= squareY &&
+  mouseY <= squareY + 55 || mouseX >= triangleX - 41 &&
     mouseX <= triangleX + 54 &&
     mouseY >= triangleY - 80 &&
-    mouseY <= triangleY + 8;
-
-  //game over if the mouse touches a shape
-  if (hitCircle || hitSquare || hitTriangle) {
+    mouseY <= triangleY + 8) {
     gameState = "game over";
-    
   }
 }
 
