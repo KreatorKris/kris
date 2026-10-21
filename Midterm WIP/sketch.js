@@ -83,7 +83,7 @@ function draw() {
     textSize(16);
     text("avoid the shapes while changing their colors", 300, 345);
 
-    //the purple streamers on the start screen
+    //the purple streamers on the start screen (copy1)
     StreamerDrawer(40);
     StreamerDrawer(120);
     StreamerDrawer(200);
@@ -101,8 +101,9 @@ function draw() {
     drawerstreamerbottom(440);
     drawerstreamerbottom(520);
     drawerstreamerbottom(600);
-
-    return;
+   
+    return; //will rerun everything(hopefully,
+    //this broke on me a few times)
   }
 
   //the game over screen
@@ -118,7 +119,7 @@ function draw() {
     textSize(22);
     text("click to restart", 300, 320);
 
-    //the purple streamers on the game over screen
+    //the purple streamers on the game over screen (copy2)
     StreamerDrawer(40);
     StreamerDrawer(120);
     StreamerDrawer(200);
@@ -136,11 +137,14 @@ function draw() {
     drawerstreamerbottom(440);
     drawerstreamerbottom(520);
     drawerstreamerbottom(600);
-
-    return;
+   
+    return; // will rerun everything(hopefully,
+    //this also broke on me a few times)
   }
 
   //the purple streamers
+  //(NTS: make 2 copies above for the
+  //start and finish screen)
   StreamerDrawer(40);
   StreamerDrawer(120);
   StreamerDrawer(200);
@@ -221,13 +225,19 @@ function draw() {
   );
 
   //small line that follows the mouse
+  //(wanted to make this
+  // move the shapes like that one game idk the name of
+  //  but idk where the code for that is in p5js refs
   stroke("white");
   strokeWeight(10);
   line(mouseX, mouseY, mouseX + 25, mouseY);
 
-  //checking if the mouse touches a shape
+  //if the mouse touches a shape
+  //game will show game over screen
+  
   /*(Found this in the calculation
-  section of p5js reference)*/
+  section of p5js reference while
+  testing some stuff cuz nothing was working b4)*/
 
   let hitCircle = dist(mouseX, mouseY, circleX, circleY) < 45;
 
@@ -246,11 +256,11 @@ function draw() {
   //game over if the mouse touches a shape
   if (hitCircle || hitSquare || hitTriangle) {
     gameState = "game over";
-    return;
+    
   }
 }
 
-//starting and restarting the game
+//starting and restarting the game itself
 function keyPressed() {
   if (keyCode === ENTER) {
     if (gameState === "start") {
@@ -287,16 +297,15 @@ function resetGame() {
   gameState = "play";
 }
 
-//changing colors and starting with the mouse
+//changing colors and starting the game
+// with the mouse like the top
 function mousePressed() {
   if (gameState === "start") {
     gameState = "play";
-    return;
   }
 
   if (gameState === "game over") {
     resetGame();
-    return;
   }
 
   //random color changes
