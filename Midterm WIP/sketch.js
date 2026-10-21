@@ -14,17 +14,16 @@ that we went over in class confused. With these ideas in mine, i used them to cr
 a circle, square and a triangle bouncing within the canvas like those old tv / dvd screens.
 */
 
-//Will be at the beginning to start/play
+ //will be at the beginning to start/play
 let gameState = "START";
 
-//The gif
+//the gif
 let backgroundGif;
 
-//Declaring the variables
-/* Instead of declaring all together
- like SS3, here, will be seperate.*/
+//the canvas
+let gameCanvas;
 
-// circle variables
+//circle variables
 let circleX = 300;
 let circleY = 200;
 let circleXSpeed = 3;
@@ -43,81 +42,162 @@ let triangleXSpeed = -3;
 let triangleYSpeed = 2;
 
 //the color variables
-let circleColor= "yellow";
-let squareColor= "green";
-let triangleColor= "blue";
+let circleColor = "yellow";
+let squareColor = "green";
+let triangleColor = "blue";
+
+//loading the gif
+function preload() {
+  backgroundGif = loadImage(
+    "libieries/static.gif",
+    () => {},
+    () => {
+      console.log("check the gif file name and folder");
+    }
+  );
+}
 
 //custom functions for the streamers
-function StreamerDrawer(StreamerX){
+function StreamerDrawer(StreamerX) {
   stroke("purple");
   strokeWeight(5);
-  fill(0,0)
-  circle(StreamerX,1,80)
+  noFill();
+  circle(StreamerX, 1, 80);
 }
 
- function drawerstreamerbottom(StreamerX){
+function drawerstreamerbottom(StreamerX) {
   stroke("purple");
   strokeWeight(5);
-  fill(0,0)
-circle(StreamerX,600,80)
-  
- }
+  noFill();
+  circle(StreamerX, 600, 80);
+}
 
 function setup() {
-  createCanvas(600, 600);
-
-  //the gif
-  backgroundGif = createImg("static.gif");
-  backgroundGif.position(200, 200);
-  backgroundGif.size(200, 200);
-  backgroundGif.style("opacity", "0.5");
-
+  gameCanvas = createCanvas(600, 600);
 }
- /* this is going to be drawing very quickly, 
- which makes the shapes move*/
-function draw (){
+
+function draw() {
+  //the black background
   background("black");
 
+  //the gif in the background
+  if (backgroundGif) {
+    push();
+    tint(255, 38);
+    image(backgroundGif, 0, 0, 600, 600);
+    pop();
+  }
 
-  //The purple streamers aka custom functions
- StreamerDrawer(40);
- StreamerDrawer(120);
- StreamerDrawer(200);
- StreamerDrawer(280);
- StreamerDrawer(360);
- StreamerDrawer(440);
- StreamerDrawer(520);
- StreamerDrawer(600);
+  //the start screen
+  if (gameState === "START") {
+    textAlign(CENTER, CENTER);
+    noStroke();
 
- drawerstreamerbottom(40);
- drawerstreamerbottom(120);
- drawerstreamerbottom(200);
- drawerstreamerbottom(280);
- drawerstreamerbottom(360);
- drawerstreamerbottom(440);
- drawerstreamerbottom(520);
- drawerstreamerbottom(600);
+    fill("yellow");
+    textSize(44);
+    text("The Shape Game", 300, 220);
 
-  /*moving the circle, 
-  x and y posistions are changed using
-  the speed variables, along with where to draw it.
-  (ALL OF THE SHAPES WORK THIS WAY!!!)*/
+    fill("white");
+    textSize(22);
+    text("click anywhere to start", 300, 300);
+
+    textSize(16);
+    text("avoid the shapes while changing their colors", 300, 345);
+
+    //the purple streamers on the start screen
+    StreamerDrawer(40);
+    StreamerDrawer(120);
+    StreamerDrawer(200);
+    StreamerDrawer(280);
+    StreamerDrawer(360);
+    StreamerDrawer(440);
+    StreamerDrawer(520);
+    StreamerDrawer(600);
+
+    drawerstreamerbottom(40);
+    drawerstreamerbottom(120);
+    drawerstreamerbottom(200);
+    drawerstreamerbottom(280);
+    drawerstreamerbottom(360);
+    drawerstreamerbottom(440);
+    drawerstreamerbottom(520);
+    drawerstreamerbottom(600);
+
+    return;
+  }
+
+  //the game over screen
+  if (gameState === "GAME OVER") {
+    textAlign(CENTER, CENTER);
+    noStroke();
+
+    fill("red");
+    textSize(48);
+    text("Game Over", 300, 250);
+
+    fill("white");
+    textSize(22);
+    text("click to restart", 300, 320);
+
+    //the purple streamers on the game over screen
+    StreamerDrawer(40);
+    StreamerDrawer(120);
+    StreamerDrawer(200);
+    StreamerDrawer(280);
+    StreamerDrawer(360);
+    StreamerDrawer(440);
+    StreamerDrawer(520);
+    StreamerDrawer(600);
+
+    drawerstreamerbottom(40);
+    drawerstreamerbottom(120);
+    drawerstreamerbottom(200);
+    drawerstreamerbottom(280);
+    drawerstreamerbottom(360);
+    drawerstreamerbottom(440);
+    drawerstreamerbottom(520);
+    drawerstreamerbottom(600);
+
+    return;
+  }
+
+  //the purple streamers
+  StreamerDrawer(40);
+  StreamerDrawer(120);
+  StreamerDrawer(200);
+  StreamerDrawer(280);
+  StreamerDrawer(360);
+  StreamerDrawer(440);
+  StreamerDrawer(520);
+  StreamerDrawer(600);
+
+  drawerstreamerbottom(40);
+  drawerstreamerbottom(120);
+  drawerstreamerbottom(200);
+  drawerstreamerbottom(280);
+  drawerstreamerbottom(360);
+  drawerstreamerbottom(440);
+  drawerstreamerbottom(520);
+  drawerstreamerbottom(600);
+
+  //moving the circle
   circleX = circleX + circleXSpeed;
   circleY = circleY + circleYSpeed;
 
   //bouncing the circle
-  if (circleX >= width -45 || circleX <= 45 ) {
+  if (circleX >= width - 45 || circleX <= 45) {
     circleXSpeed = -circleXSpeed;
   }
-  
+
   if (circleY >= height - 45 || circleY <= 45) {
     circleYSpeed = -circleYSpeed;
   }
-  
+
   //this is the circle
   fill(circleColor);
-   circle(circleX, circleY, 90);
-
+  stroke("purple");
+  strokeWeight(3);
+  circle(circleX, circleY, 90);
 
   //moving the square
   squareX = squareX + squareXSpeed;
@@ -128,13 +208,15 @@ function draw (){
     squareXSpeed = -squareXSpeed;
   }
 
-  if ( squareY >= height - 55 || squareY <= 0) {
+  if (squareY >= height - 55 || squareY <= 0) {
     squareYSpeed = -squareYSpeed;
   }
+
   //this is the square
-   fill(squareColor)
+  fill(squareColor);
+  stroke("purple");
+  strokeWeight(3);
   square(squareX, squareY, 55);
-  
 
   //moving the triangle
   triangleX = triangleX + triangleXSpeed;
@@ -149,31 +231,96 @@ function draw (){
     triangleYSpeed = -triangleYSpeed;
   }
 
-  fill(triangleColor)
-  triangle(triangleX, triangleY - 80, triangleX - 41, triangleY + 8, triangleX + 54, triangleY + 8);
+  //this is the triangle
+  fill(triangleColor);
+  stroke("purple");
+  strokeWeight(3);
+  triangle(
+    triangleX, triangleY - 80,
+    triangleX - 41, triangleY + 8,
+    triangleX + 54, triangleY + 8
+  );
 
-  //small line that follows mouse(test)
+  //small line that follows the mouse
   stroke("white");
   strokeWeight(10);
   line(mouseX, mouseY, mouseX + 25, mouseY);
 
+  //checking if the mouse touches a shape
+  /*(Found this in the calculation
+  section of p5js refrence)*/
+  let hitCircle = dist(mouseX, mouseY, circleX, circleY) < 45;
+
+  let hitSquare =
+    mouseX >= squareX &&
+    mouseX <= squareX + 55 &&
+    mouseY >= squareY &&
+    mouseY <= squareY + 55;
+
+  let hitTriangle =
+    mouseX >= triangleX - 41 &&
+    mouseX <= triangleX + 54 &&
+    mouseY >= triangleY - 80 &&
+    mouseY <= triangleY + 8;
+
+  //game over if the mouse touches a shape
+  if (hitCircle || hitSquare || hitTriangle) {
+    gameState = "GAME OVER";
+    return;
+  }
 }
- /*when you press the mouse, each color of the shape will
- be randomized into different colors. 
- i looked up "random color changing p5js reference" and used the refrence
- that came up, but i had to use spefifc colors because the random cmd
- wasnt working. */ 
-  function mousePressed(){
-  circleColor = random(["red", "blue", "purple", "orange", "green"])
-  squareColor = random(["red", "blue", "purple", "orange", "green"])
-  triangleColor = random(["red", "blue", "purple", "orange", "green"])
 
-
+//starting and restarting the game
+function keyPressed() {
+  if (keyCode === ENTER || key === "Enter") {
+    if (gameState === "START") {
+      gameState = "PLAY";
+    } else if (gameState === "GAME OVER") {
+      resetGame();
+    }
+  }
 }
 
+//resetting the shapes with a
+// custom function, kinda like the streamers
+//its kinda like a recall function
+function resetGame() {
+  circleX = 300;
+  circleY = 200;
+  circleXSpeed = 3;
+  circleYSpeed = 2;
 
+  squareX = 150;
+  squareY = 300;
+  squareXSpeed = 2;
+  squareYSpeed = 3;
 
+  triangleX = 400;
+  triangleY = 400;
+  triangleXSpeed = -3;
+  triangleYSpeed = 2;
 
+  circleColor = "yellow";
+  squareColor = "green";
+  triangleColor = "blue";
 
+  gameState = "PLAY";
+}
 
+//changing colors and starting with the mouse
+function mousePressed() {
+  if (gameState === "START") {
+    gameState = "PLAY";
+    return;
+  }
 
+  if (gameState === "GAME OVER") {
+    resetGame();
+    return;
+  }
+
+  //random color changes
+  circleColor = random(["red", "blue", "purple", "orange", "green"]);
+  squareColor = random(["red", "blue", "purple", "orange", "green"]);
+  triangleColor = random(["red", "blue", "purple", "orange", "green"]);
+}
