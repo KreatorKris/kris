@@ -14,8 +14,9 @@ that we went over in class confused. With these ideas in mine, i used them to cr
 a circle, square and a triangle bouncing within the canvas like those old tv / dvd screens.
 */
 
+
  //will be at the beginning to start/play
-let gameState = "START";
+let gameState = "start";
 
 //the gif
 let backgroundGif;
@@ -45,17 +46,6 @@ let triangleYSpeed = 2;
 let circleColor = "yellow";
 let squareColor = "green";
 let triangleColor = "blue";
-
-//loading the gif
-function preload() {
-  backgroundGif = loadImage(
-    "libieries/static.gif",
-    () => {},
-    () => {
-      console.log("check the gif file name and folder");
-    }
-  );
-}
 
 //custom functions for the streamers
 function StreamerDrawer(StreamerX) {
@@ -89,7 +79,7 @@ function draw() {
   }
 
   //the start screen
-  if (gameState === "START") {
+  if (gameState === "start") {
     textAlign(CENTER, CENTER);
     noStroke();
 
@@ -127,13 +117,13 @@ function draw() {
   }
 
   //the game over screen
-  if (gameState === "GAME OVER") {
+  if (gameState === "game over") {
     textAlign(CENTER, CENTER);
     noStroke();
 
     fill("red");
     textSize(48);
-    text("Game Over", 300, 250);
+    text("game Over", 300, 250);
 
     fill("white");
     textSize(22);
@@ -248,7 +238,8 @@ function draw() {
 
   //checking if the mouse touches a shape
   /*(Found this in the calculation
-  section of p5js refrence)*/
+  section of p5js reference)*/
+
   let hitCircle = dist(mouseX, mouseY, circleX, circleY) < 45;
 
   let hitSquare =
@@ -265,24 +256,24 @@ function draw() {
 
   //game over if the mouse touches a shape
   if (hitCircle || hitSquare || hitTriangle) {
-    gameState = "GAME OVER";
+    gameState = "game over";
     return;
   }
 }
 
 //starting and restarting the game
 function keyPressed() {
-  if (keyCode === ENTER || key === "Enter") {
-    if (gameState === "START") {
-      gameState = "PLAY";
-    } else if (gameState === "GAME OVER") {
+  if (keyCode === ENTER) {
+    if (gameState === "start") {
+      gameState = "play";
+    } else if (gameState === "game over") {
       resetGame();
     }
   }
 }
 
 //resetting the shapes with a
-// custom function, kinda like the streamers
+//custom function, kinda like the streamers
 //its kinda like a recall function
 function resetGame() {
   circleX = 300;
@@ -304,17 +295,17 @@ function resetGame() {
   squareColor = "green";
   triangleColor = "blue";
 
-  gameState = "PLAY";
+  gameState = "play";
 }
 
 //changing colors and starting with the mouse
 function mousePressed() {
-  if (gameState === "START") {
-    gameState = "PLAY";
+  if (gameState === "start") {
+    gameState = "play";
     return;
   }
 
-  if (gameState === "GAME OVER") {
+  if (gameState === "game over") {
     resetGame();
     return;
   }
