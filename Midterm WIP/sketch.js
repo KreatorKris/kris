@@ -15,11 +15,8 @@ a circle, square and a triangle bouncing within the canvas like those old tv / d
 */
 
 
- //will be at the beginning to start/play
+//will be at the beginning to start/play
 let gameState = "start";
-
-//the gif
-let backgroundGif;
 
 //the canvas
 let gameCanvas;
@@ -69,14 +66,6 @@ function setup() {
 function draw() {
   //the black background
   background("black");
-
-  //the gif in the background
-  if (backgroundGif) {
-    push();
-    tint(255, 38);
-    image(backgroundGif, 0, 0, 600, 600);
-    pop();
-  }
 
   //the start screen
   if (gameState === "start") {
