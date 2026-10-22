@@ -155,7 +155,7 @@ function draw() {
 
   //will display the image during game
   //i struggled alot on where to put this lol
-  tint(20);
+  tint(15);
   image(static, 300, 300, 600, 600);
 
 
