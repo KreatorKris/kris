@@ -14,6 +14,8 @@ that we went over in class confused. With these ideas in mine, i used them to cr
 a circle, square and a triangle bouncing within the canvas like those old tv / dvd screens.
 */
 
+//Declares the image to be called static
+let static;
 
 //will be at the beginning to start/play
 let gameState = "start";
@@ -44,6 +46,11 @@ let circleColor = "yellow";
 let squareColor = "green";
 let triangleColor = "blue";
 
+function preload(){
+//will look through files to load picture
+static = loadImage("images/static.png.jpg");
+}
+
 //custom functions for the streamers
 function StreamerDrawer(StreamerX) {
   stroke("purple");
@@ -60,7 +67,10 @@ function drawerstreamerbottom(StreamerX) {
 }
 
 function setup() {
-  gameCanvas = createCanvas(600, 600);
+ createCanvas(600, 600);
+ imageMode(CENTER); //this will draw
+ //the pic in the middle
+
 }
 
 function draw() {
@@ -82,6 +92,7 @@ function draw() {
 
     textSize(16);
     text("avoid the shapes while changing their colors", 300, 345);
+
 
     //the purple streamers on the start screen (copy1)
     StreamerDrawer(40);
@@ -141,6 +152,13 @@ function draw() {
     return; // will rerun everything(hopefully,
     //this also broke on me a few times)
   }
+
+  //will display the image during game
+  //i struggled alot on where to put this lol
+  tint(20);
+  image(static, 300, 300, 600, 600);
+
+
 
   //the purple streamers
   //(NTS: make 2 copies above for the
@@ -243,6 +261,19 @@ function draw() {
   the collision of the shapes
   and mouse to see if they touch,
   which makes u lose the game
+
+  *IMPORTANT*; 
+  explaination incase future me forgets:
+  this code checks if the mouse touches
+  any of the shapes. if the mouse does,
+  then the game will end. (The code itself
+  checks the shapes seperatly for this) 
+  It is an "if" statement so its like saying;
+  "if the mouse touches one of the shapes,
+  then its game over". The if will check inside
+  the () and if its true then whatever is in {}
+  becomes true. gameState = game over is
+  just switching to the game over screen.
   */
   //game over if the mouse touches a shape
   if (dist(mouseX, mouseY, circleX, circleY) < 45 || mouseX >= squareX &&
@@ -254,9 +285,12 @@ function draw() {
     mouseY <= triangleY + 8) {
     gameState = "game over";
   }
+
 }
 
 //starting and restarting the game itself
+// same thing as the explaination labled
+//*IMPORTANT*
 function keyPressed() {
   if (keyCode === ENTER) {
     if (gameState === "start") {
