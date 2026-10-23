@@ -182,6 +182,8 @@ function draw() {
   drawerstreamerbottom(600);
 
   //moving the circle
+  // (reminder: need to explain
+  // better i keep forgetting ): )
   circleX = circleX + circleXSpeed;
   circleY = circleY + circleYSpeed;
 
@@ -286,7 +288,7 @@ function draw() {
   3 corners are so if u touch it aswell
   it will be game over
   */
- 
+
   //game over if the mouse touches a shape
   if (dist(mouseX, mouseY, circleX, circleY) 
   < 45 || mouseX >= squareX &&
