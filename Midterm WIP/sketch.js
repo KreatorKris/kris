@@ -274,16 +274,29 @@ function draw() {
   the () and if its true then whatever is in {}
   becomes true. gameState = game over is
   just switching to the game over screen.
+  REMINDER: the circle uses 45 bc i
+  divided the diameter: 90/2 to get 45
+  as the radius aka half,(geometry stuff) 
+  the square stays 55 because thats
+  both its width and height
+  (also where if u hit the square
+  the game ends)
+  the triangle uses its own numbers
+  bc of how its drawn and where the
+  3 corners are so if u touch it aswell
+  it will be game over
   */
+ 
   //game over if the mouse touches a shape
-  if (dist(mouseX, mouseY, circleX, circleY) < 45 || mouseX >= squareX &&
+  if (dist(mouseX, mouseY, circleX, circleY) 
+  < 45 || mouseX >= squareX &&
   mouseX <= squareX + 55 &&
   mouseY >= squareY &&
   mouseY <= squareY + 55 || mouseX >= triangleX - 41 &&
-    mouseX <= triangleX + 54 &&
-    mouseY >= triangleY - 80 &&
-    mouseY <= triangleY + 8) {
-    gameState = "game over";
+  mouseX <= triangleX + 54 &&
+  mouseY >= triangleY - 80 &&
+  mouseY <= triangleY + 8) {
+  gameState = "game over";
   }
 
 }
@@ -293,11 +306,11 @@ function draw() {
 //*IMPORTANT*
 function keyPressed() {
   if (keyCode === ENTER) {
-    if (gameState === "start") {
-      gameState = "play";
-    } else if (gameState === "game over") {
-      resetGame();
-    }
+ if (gameState === "start") {
+  gameState = "play";
+  } else if (gameState === "game over") {
+  resetGame();
+  }
   }
 }
 
