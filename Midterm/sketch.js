@@ -312,7 +312,7 @@ function draw() {
 
   if (triangleXSpeed < 0) {
     triangleXSpeed = triangleXSpeed - 0.01 * (gametime / 1000);
-  } else {
+  } else { 
     triangleXSpeed = triangleXSpeed + 0.01 * (gametime / 1000);
   } //This gradually increases the triangle's horizontal speed as the player stays alive longer. The if and else make sure it speeds up in the direction it is already travelling.
 
@@ -413,7 +413,7 @@ function keyPressed() {
   } //This lets the player start the game by pressing ENTER or restart after losing.
 }
 
-//resetting the shapes with a
+//resetting the shapes/game with a
 //custom function, kinda like the streamers
 //its kinda like a recall function
 function resetGame() {
