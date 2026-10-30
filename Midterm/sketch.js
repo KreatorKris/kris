@@ -17,6 +17,15 @@ a circle, square and a triangle bouncing within the canvas like those old tv / d
 //Declares the image to be called static
 let static;
 
+//Declares variables to remember the
+//time for when the game starts
+let gamestart;
+let gametime;
+
+//Declares the ratio between
+// xspeed and yspeed for shapes
+let ratio;
+
 //will be at the beginning to start/play
 let gameState = "start";
 
@@ -74,8 +83,15 @@ function setup() {
 }
 
 function draw() {
+
   //the black background
   background("black");
+
+  //this will calculate how long the
+  //player has been alive
+  if (gameState === "play"){
+    gametime = millis() - gamestart;
+  }
 
   //the start screen
   if (gameState === "start") {
@@ -130,6 +146,14 @@ function draw() {
     textSize(22);
     text("click to restart", 300, 320);
 
+    //shows the time of how long the
+    // player has been alive for
+    //i want the gametime to change from
+    // milis to secs so divide by 1000
+    textSize(15)
+    text("time:" + gametime / 1000, 300,370);
+
+
     //the purple streamers on the game over screen (copy2)
     StreamerDrawer(40);
     StreamerDrawer(120);
@@ -157,7 +181,18 @@ function draw() {
   //i struggled alot on where to put this lol
   tint(15);
   image(static, 300, 300, 600, 600);
-
+  
+  //shows the time of how long the
+    /* player has been alive for
+    i want the gametime to change from
+     milis to secs so divide by 1000,
+     the 50,50 is the text x and y that
+     i added since the vs tips thingy
+    recommended a x and y for text
+    (i had this in the game over screen
+     by accident at first)*/
+    textSize(15)
+    text("time:" + gametime / 1000, 50,50)
 
 
   //the purple streamers
@@ -184,6 +219,9 @@ function draw() {
   //moving the circle
   // (reminder: need to explain
   // better i keep forgetting ): )
+  ratio = circleYSpeed / circleXSpeed;
+  circleXSpeed = circleXSpeed + 0.0001;
+  circleYSpeed = ratio * circleXSpeed;
   circleX = circleX + circleXSpeed;
   circleY = circleY + circleYSpeed;
 
@@ -203,6 +241,9 @@ function draw() {
   circle(circleX, circleY, 90);
 
   //moving the square
+  ratio = squareYSpeed / squareXSpeed;
+  squareXSpeed = squareXSpeed + 0.0001;
+  squareYSpeed = ratio * squareXSpeed;
   squareX = squareX + squareXSpeed;
   squareY = squareY + squareYSpeed;
 
@@ -222,6 +263,9 @@ function draw() {
   square(squareX, squareY, 55);
 
   //moving the triangle
+  ratio = triangleYSpeed / triangleXSpeed;
+  triangleXSpeed = triangleXSpeed - 0.0001;
+  triangleYSpeed = ratio * triangleXSpeed;
   triangleX = triangleX + triangleXSpeed;
   triangleY = triangleY + triangleYSpeed;
 
@@ -310,6 +354,7 @@ function keyPressed() {
   if (keyCode === ENTER) {
  if (gameState === "start") {
   gameState = "play";
+  gamestart = millis()
   } else if (gameState === "game over") {
   resetGame();
   }
@@ -320,18 +365,18 @@ function keyPressed() {
 //custom function, kinda like the streamers
 //its kinda like a recall function
 function resetGame() {
-  circleX = 300;
-  circleY = 200;
+  circleX = 100;
+  circleY = 50;
   circleXSpeed = 3;
   circleYSpeed = 2;
 
-  squareX = 150;
-  squareY = 300;
+  squareX = 50;
+  squareY = 200;
   squareXSpeed = 2;
   squareYSpeed = 3;
 
-  triangleX = 400;
-  triangleY = 400;
+  triangleX = 600;
+  triangleY = 500;
   triangleXSpeed = -3;
   triangleYSpeed = 2;
 
@@ -339,6 +384,8 @@ function resetGame() {
   squareColor = "green";
   triangleColor = "blue";
 
+  gamestart = millis();
+  gametime = 0
   gameState = "play";
 }
 
@@ -347,6 +394,7 @@ function resetGame() {
 function mousePressed() {
   if (gameState === "start") {
     gameState = "play";
+    gamestart = millis();
   }
 
   if (gameState === "game over") {
