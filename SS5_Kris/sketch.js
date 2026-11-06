@@ -153,8 +153,7 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   it adds +80 to "a", which changes the starting position of the next vine.
   this also makes it repeat within the canvas instead of the vines being drawn ontop of each other.*/
   a = a + 80;
-  }
-}
+  }}
 
 }
 
