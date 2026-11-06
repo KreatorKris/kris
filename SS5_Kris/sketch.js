@@ -43,15 +43,16 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   fill("yellow");
   circle(x, y, 15);
 
-  y = y + 80; //copies flowers down.
+  y = y + 80; //copies flowers 80 down.
  }
-  x = x + 80; //copies flowers to the right.
+  x = x + 80; //copies flowers 80 right.
   }
 
   //line pattern vines
   let a = 55; // sets the variable for the starting positon of the vine.
-
   while (a < width) { //copies the vines across the canvas.
+ 
+  //the vines
   stroke("green");
   strokeWeight(4);
   line(a, 10, a - 5, 50);
@@ -71,4 +72,36 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   this also makes it repeat within the canvas instead of the vines being drawn ontop of each other.*/
   a = a + 80;
   }
+
+
+//another flower pattern:
+  //variables; b = x, c = y
+  let b = 55; //sets the starting horizontal position of the flower.(left to right)
+  while (b < width) { //copies the flowers across the canvas.
+  let c = 60; //sets the starting vertical position of the flower.(up to down)
+  while (c < height) { //copies the flowers down the canvas.
+  
+  //top right petal
+  stroke("black");
+  strokeWeight(3);
+  fill("blue");
+  circle(b + 7, c - 7, 15); //moves 7 right/up
+
+  //bottom right petal
+ circle(b + 7, c + 7, 15); //moves 7 right/down
+
+  //bottom left petal
+  circle(b - 7, c + 7, 15) //moves 7 left/down
+
+  //top left petal
+  circle(b - 7, c - 7, 15) //moves 7 left/up
+  
+  //middle
+  fill("yellow");
+  circle(b, c, 10);
+
+  c = c + 80; //copies flowers 80 down.
+  }
+  b = b + 80; //copies flowers 80 right.
+}
 }
