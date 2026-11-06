@@ -16,35 +16,35 @@ if (mouseIsPressed) {
 background(50);
 
 //line pattern vines
-let a = 55; // sets the variable for the starting positon of the vine.
-while (a < width) { //copies the vines across the canvas.
+let v = 55; // sets the variable for the starting positon of the vine.
+while (v < width) { //copies the vines across the canvas.
 
 //the vines
 stroke("black");
 strokeWeight(4);
-line(a - 25, 10, a - 30, 50);
-line(a - 30, 50, a - 25, 80);
-line(a - 30, 110, a - 25, 80);
-line(a - 25, 160, a - 30, 110);
-line(a - 30, 200, a - 25, 160);
-line(a - 25, 240, a - 30, 200);
-line(a - 30, 280, a - 25, 240);
-line(a - 25, 320, a - 30, 280);
-line(a - 30, 360, a - 25, 320);
+line(v - 25, 10, v - 30, 50);
+line(v - 30, 50, v - 25, 80);
+line(v - 30, 110, v - 25, 80);
+line(v - 25, 160, v - 30, 110);
+line(v - 30, 200, v - 25, 160);
+line(v - 25, 240, v - 30, 200);
+line(v - 30, 280, v - 25, 240);
+line(v - 25, 320, v - 30, 280);
+line(v - 30, 360, v - 25, 320);
 
 //thorns on the black vines
-//variable; t
-for (let t = 40; t < 360; t = t + 80) { //starts at 40, stops before 360, and moves down 80 each time.
-triangle(a - 25, t, a - 35, t - 5, a - 25, t + 5); //makes a thorn pointing left, 35 moves it 10 pixels away from the vine.
-triangle(a - 25, t + 40, a - 15, t + 35, a - 25, t + 45); //makes a thorn pointing right, 15 moves it 10 pixels away from the vine.
+//variable; t for "T"horns
+for (let t = 40; t < 370; t = t + 80) { //starts at 40, stops before 360, and moves down 80 each time.
+triangle(v - 25, t, v - 35, t - 5, v - 25, t + 5); //makes a thorn pointing left, 35 moves it 10 pixels away from the vine.
+triangle(v - 25, t + 40, v - 15, t + 35, v - 25, t + 45); //makes a thorn pointing right, 15 moves it 10 pixels away from the vine.
 }
 
 /*copies the vines to the right.
 to remember/explain in better words:
 - everytime the loop finishes drawing 1 vine,
-it adds +80 to "a", which changes the starting position of the next vine.
+it adds +80 to "v", which changes the starting position of the next vine.
 this also makes it repeat within the canvas instead of the vines being drawn ontop of each other.*/
-a = a + 80;
+v = v + 80;
 }
 
 //another flower pattern:
@@ -73,9 +73,9 @@ a = a + 80;
   fill("yellow");
   circle(b, c, 10);
 
-  c = c + 80; //copies flowers 80 down.
-  }
-  b = b + 80; //copies flowers 80 right.
+c = c + 80; //copies flowers 80 down.
+}
+b = b + 80; //copies flowers 80 right.
 }
 
 }
