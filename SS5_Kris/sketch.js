@@ -1,5 +1,7 @@
 /*Kris M.
-Title: A pastel floral pattern */
+Title: A pastel floral pattern
+intructions; press your mouse to make a darker spookier pattern appear,
+otherwise if you dont: a more viberent and happier pattern is here to stay! */
 
 //canvas
 function setup() {
@@ -48,7 +50,7 @@ a = a + 80;
 
   //top right petal
   stroke("black");
-  strokeWeight(3);
+  strokeWeight(2);
   fill("blue");
   circle(b + 7, c - 7, 15); //moves 7 right/up
 
