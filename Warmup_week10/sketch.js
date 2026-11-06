@@ -10,21 +10,22 @@ function setup() {
 
 
 function draw() {
+debugger;
 background("beige");
+
 //varibles
-let x = 100; //sets starting positon of circle
+let x = 100; //sets starting positon of circles
 while (x < width) {
-let y = 200
+let y = 100;
 while (y < height){
 
 //polka dots
 stroke("black");
-strokeWeight(2);
+strokeWeight(10);
 fill("black");
-circle(x + 100, y - 100, 400, 200);
+point(x, y);
+x += 100;
+y += 100;
 }}
-
-
-
 
 }
