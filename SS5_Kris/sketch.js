@@ -9,7 +9,7 @@ createCanvas(400, 370);
 }
 
 function draw() {
-//checks if the mouse is pressed
+//checks if the mouse is pressed, and if it is then it will display the spooky flowers
 if (mouseIsPressed) {
 
 //dark grey background
@@ -76,13 +76,10 @@ v = v + 80;
 c = c + 80; //copies flowers 80 down.
 }
 b = b + 80; //copies flowers 80 right.
-}
+}}
 
-}
-
-//if the mouse is not pressed, the original pattern appears
-else {
-
+//if the mouse is not pressed, then the original and happy pattern appears
+else{
 //background color
 background(0,255,150);
 
