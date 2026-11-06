@@ -33,6 +33,7 @@ line(a - 25, 320, a - 30, 280);
 line(a - 30, 360, a - 25, 320);
 
 //thorns on the black vines
+//variable; t
 for (let t = 40; t < 360; t = t + 80) { //starts at 40, stops before 360, and moves down 80 each time.
 triangle(a - 25, t, a - 35, t - 5, a - 25, t + 5); //makes a thorn pointing left, 35 moves it 10 pixels away from the vine.
 triangle(a - 25, t + 40, a - 15, t + 35, a - 25, t + 45); //makes a thorn pointing right, 15 moves it 10 pixels away from the vine.
