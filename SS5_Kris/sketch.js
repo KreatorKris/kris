@@ -8,7 +8,6 @@ createCanvas(400, 370);
 
 
 function draw() {
-
 //checks if the mouse is pressed
 if (mouseIsPressed) {
 
