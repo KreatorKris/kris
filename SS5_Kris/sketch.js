@@ -35,8 +35,8 @@ line(v - 30, 360, v - 25, 320);
 //thorns on the black vines
 //variable; t for "T"horns
 for (let t = 40; t < 370; t = t + 80) { //starts at 40, stops before 360, and moves down 80 each time.
-triangle(v - 25, t, v - 35, t - 5, v - 25, t + 5); //makes a thorn pointing left, 35 moves it 10 pixels away from the vine.
-triangle(v - 25, t + 40, v - 15, t + 35, v - 25, t + 45); //makes a thorn pointing right, 15 moves it 10 pixels away from the vine.
+triangle(v - 25, t, v - 30, t - 5, v - 25, t + 5); //makes a thorn pointing left, 35 moves it 10 pixels away from the vine.
+triangle(v - 25, t + 40, v - 15, t + 30, v - 25, t + 35); //makes a thorn pointing right, 15 moves it 10 pixels away from the vine.
 }
 
 /*copies the vines to the right.
