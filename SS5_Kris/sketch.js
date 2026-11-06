@@ -16,6 +16,7 @@ let x = 20; //sets the starting horizontal position where the first flower will 
 while (x < width) { //copies the flowers until they reach across the canvas.
 let y = 20; //sets the starting vertical position for the flowers in each new column.(up to down)
 while (y < height) { //copies the flowers until they reach the bottom of canvas.
+//height and width is based off canvas size.
 
 //flower pattern
 // (+) = moving right/down, (-) = moving left/up
