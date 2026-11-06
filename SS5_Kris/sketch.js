@@ -33,6 +33,14 @@ line(a - 30, 280, a - 25, 240);
 line(a - 25, 320, a - 30, 280);
 line(a - 30, 360, a - 25, 320);
 
+//thorns on the black vines
+for (let t = 30; t < 360; t = t + 40) { //copies the thorns down the vine.
+fill("black");
+noStroke();
+triangle(a - 27, t, a - 42, t - 10, a - 29, t + 5); //left thorn
+triangle(a - 27, t, a - 12, t - 10, a - 25, t + 5); //right thorn
+}
+
 /*copies the vines to the right.
 to remember/explain in better words:
 - everytime the loop finishes drawing 1 vine,
@@ -133,6 +141,19 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   line(a - 5, 280, a, 240);
   line(a, 320, a - 5, 280);
   line(a - 5, 360, a, 320);
+
+  //leaves on the green vines
+for (let t = 30; t < 360; t = t + 40) { //starts at 30 and adds 40 each time until it reaches 360. This copies the leaves down the vine.
+stroke("green"); //sets the outline color of the leaves to green.
+strokeWeight(1); //makes the outline thin.
+fill("lightgreen"); //sets the inside color of the leaves to light green.
+
+triangle(a - 3, t, a - 18, t - 12, a - 5, t + 5); //makes a triangle leaf on the left side of the vine.
+triangle(a - 3, t, a + 12, t - 12, a - 1, t + 5); //makes a triangle leaf on the right side of the vine.
+
+circle(a - 12, t - 7, 6); //makes a small round leaf on the left side of the vine.
+circle(a + 6, t - 7, 6); //makes a small round leaf on the right side of the vine.
+}
 
   /*copies the vines to the right.
   to remember/explain in better words:
