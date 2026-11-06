@@ -34,11 +34,13 @@ line(a - 25, 320, a - 30, 280);
 line(a - 30, 360, a - 25, 320);
 
 //thorns on the black vines
-for (let t = 30; t < 360; t = t + 40) { //copies the thorns down the vine.
-fill("black");
-noStroke();
-triangle(a - 27, t, a - 42, t - 10, a - 29, t + 5); //left thorn
-triangle(a - 27, t, a - 12, t - 10, a - 25, t + 5); //right thorn
+for (let t = 25; t < 360; t = t + 40) { //copies the thorns down the vine.
+fill("black"); //sets the thorns to black.
+noStroke(); //removes the outline.
+
+triangle(a - 27, t, a - 40, t - 5, a - 28, t + 5); //makes a small thorn on the left.
+triangle(a - 27, t + 12, a - 10, t + 5, a - 25, t + 20); //makes a thorn on the right.
+triangle(a - 27, t + 30, a - 38, t + 20, a - 25, t + 35); //makes another thorn on the left.
 }
 
 /*copies the vines to the right.
@@ -143,16 +145,15 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   line(a - 5, 360, a, 320);
 
   //leaves on the green vines
-for (let t = 30; t < 360; t = t + 40) { //starts at 30 and adds 40 each time until it reaches 360. This copies the leaves down the vine.
-stroke("green"); //sets the outline color of the leaves to green.
+for (let t = 25; t < 360; t = t + 40) { //copies the leaves down the vine.
+stroke("green"); //sets the outline color to green.
 strokeWeight(1); //makes the outline thin.
-fill("lightgreen"); //sets the inside color of the leaves to light green.
+fill("lightgreen"); //sets the inside color to light green.
 
-triangle(a - 3, t, a - 18, t - 12, a - 5, t + 5); //makes a triangle leaf on the left side of the vine.
-triangle(a - 3, t, a + 12, t - 12, a - 1, t + 5); //makes a triangle leaf on the right side of the vine.
-
-circle(a - 12, t - 7, 6); //makes a small round leaf on the left side of the vine.
-circle(a + 6, t - 7, 6); //makes a small round leaf on the right side of the vine.
+circle(a - 12, t, 9); //makes a small round leaf on the left.
+circle(a + 7, t + 8, 6); //makes a smaller round leaf on the right.
+circle(a - 8, t + 25, 7); //makes another round leaf on the left.
+circle(a + 12, t + 30, 10); //makes a bigger round leaf on the right.
 }
 
   /*copies the vines to the right.
