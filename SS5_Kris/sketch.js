@@ -3,7 +3,7 @@ Title: A pastel floral pattern */
 
 //canvas
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 370);
 }
 
 
@@ -18,25 +18,25 @@ let y = 20; //sets the starting vertical position for the flowers in each new co
 while (y < height) { //copies the flowers until they reach the bottom of canvas.
 
 //flower pattern
+// (+) = moving right/down, (-) = moving left/up
 //parts of the flower:
-
   //top petal
   stroke("black");
   strokeWeight(2);
   fill("pink");
-  circle(x, y - 10, 20);
+  circle(x, y - 10, 20); //moves 10 up
 
   //right petal
   fill("pink");
-  circle(x + 10, y, 20);
+  circle(x + 10, y, 20); //moves 10 right
 
   //bottom petal
   fill("pink");
-  circle(x, y + 10, 20);
+  circle(x, y + 10, 20); //moves 10 down
 
   //left petal
   fill("pink");
-  circle(x - 10, y, 20);
+  circle(x - 10, y, 20); //moves 10 left
 
   //middle
   fill("yellow");
@@ -63,7 +63,11 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   line(a, 320, a - 5, 280);
   line(a - 5, 360, a, 320);
 
-  //copies the vines to the right
+  /*copies the vines to the right.
+  to remember/explain in better words:
+  everytime the loop finishes drawing 1 vine,
+  it adds +80 to "a", which changes the starting position of the next vine.
+  this also makes it repeat within the canvas instead of the vines being drawn ontop of each other.*/
   a = a + 80;
   }
 }
