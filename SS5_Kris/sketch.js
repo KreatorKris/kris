@@ -8,7 +8,6 @@ function setup() {
 createCanvas(400, 370);
 }
 
-
 function draw() {
 //checks if the mouse is pressed
 if (mouseIsPressed) {
@@ -34,13 +33,9 @@ line(a - 25, 320, a - 30, 280);
 line(a - 30, 360, a - 25, 320);
 
 //thorns on the black vines
-for (let t = 25; t < 360; t = t + 40) { //copies the thorns down the vine.
-fill("black"); //sets the thorns to black.
-noStroke(); //removes the outline.
-
-triangle(a - 27, t, a - 40, t - 5, a - 28, t + 5); //makes a small thorn on the left.
-triangle(a - 27, t + 12, a - 10, t + 5, a - 25, t + 20); //makes a thorn on the right.
-triangle(a - 27, t + 30, a - 38, t + 20, a - 25, t + 35); //makes another thorn on the left.
+for (let t = 40; t < 360; t = t + 80) { //starts at 40, stops before 360, and moves down 80 each time.
+triangle(a - 25, t, a - 35, t - 5, a - 25, t + 5); //makes a thorn pointing left, 35 moves it 10 pixels away from the vine.
+triangle(a - 25, t + 40, a - 15, t + 35, a - 25, t + 45); //makes a thorn pointing right, 15 moves it 10 pixels away from the vine.
 }
 
 /*copies the vines to the right.
@@ -128,7 +123,7 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   }
 
   //line pattern vines
-  let a = 55; // sets the variable for the starting positon of the vine.
+  let a = 55; // sets the starting positon of the vine.
   while (a < width) { //copies the vines across the canvas.
 
   //the vines
@@ -145,16 +140,14 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   line(a - 5, 360, a, 320);
 
   //leaves on the green vines
-for (let t = 25; t < 360; t = t + 40) { //copies the leaves down the vine.
-stroke("green"); //sets the outline color to green.
-strokeWeight(1); //makes the outline thin.
-fill("lightgreen"); //sets the inside color to light green.
+  noFill(); //makes the leaves see-through.
+  stroke("green");
+  strokeWeight(2);
 
-circle(a - 12, t, 9); //makes a small round leaf on the left.
-circle(a + 7, t + 8, 6); //makes a smaller round leaf on the right.
-circle(a - 8, t + 25, 7); //makes another round leaf on the left.
-circle(a + 12, t + 30, 10); //makes a bigger round leaf on the right.
-}
+  for (let t = 40; t < 360; t = t + 80) { //starts at 40, stops before 360, and moves down 80 each time.
+  ellipse(a - 10, t, 12, 6); //makes a leaf on the left, 10 moves it away from the vine and 12 is its width and 6 is its height.
+  ellipse(a + 8, t + 40, 12, 6); //makes a leaf on the right, 8 moves it away from the vine and 40 moves it 40 pixels lower.
+  }
 
   /*copies the vines to the right.
   to remember/explain in better words:
@@ -166,3 +159,4 @@ circle(a + 12, t + 30, 10); //makes a bigger round leaf on the right.
 }
 
 }
+
