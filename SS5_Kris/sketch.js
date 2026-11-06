@@ -138,13 +138,13 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   line(a - 5, 360, a, 320);
 
   //leaves on the green vines
-  noFill(); //makes the leaves see-through.
+  fill("green");
   stroke("green");
   strokeWeight(2);
 
-  for (let t = 40; t < 360; t = t + 80) { //starts at 40, stops before 360, and moves down 80 each time.
-  ellipse(a - 10, t, 12, 6); //makes a leaf on the left, 10 moves it away from the vine and 12 is its width and 6 is its height.
-  ellipse(a + 8, t + 40, 12, 6); //makes a leaf on the right, 8 moves it away from the vine and 40 moves it 40 pixels lower.
+  for(let t = 40; t < 360; t = t + 80) { //starts at 40, stops before 360, and moves down 80 each time.
+  circle(a - 10, t, 12, 6); //makes a leaf on the left, 10 moves it away from the vine and 12 is its width and 6 is its height.
+  circle(a + 8, t + 40, 12, 6); //makes a leaf on the right, 8 moves it away from the vine and 40 moves it 40 lower.
   }
 
   /*copies the vines to the right.
