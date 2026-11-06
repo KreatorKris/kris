@@ -1,5 +1,5 @@
 /*Kris M.
-Title: A pastel floral pattern
+Title: Pastel floral pattern turns spooky
 intructions; press your mouse to make a darker spookier pattern appear,
 otherwise if you dont: a more viberent and happier pattern is here to stay! */
 
