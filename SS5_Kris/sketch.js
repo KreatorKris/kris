@@ -140,7 +140,6 @@ while (y < height) { //copies the flowers until they reach the bottom of canvas.
   this also makes it repeat within the canvas instead of the vines being drawn ontop of each other.*/
   a = a + 80;
   }
-
 }
 
 }
