@@ -15,6 +15,31 @@ if (mouseIsPressed) {
 //dark grey background
 background(50);
 
+//line pattern vines
+let a = 55; // sets the variable for the starting positon of the vine.
+while (a < width) { //copies the vines across the canvas.
+
+//the vines
+stroke("black");
+strokeWeight(4);
+line(a - 25, 10, a - 30, 50);
+line(a - 30, 50, a - 25, 80);
+line(a - 30, 110, a - 25, 80);
+line(a - 25, 160, a - 30, 110);
+line(a - 30, 200, a - 25, 160);
+line(a - 25, 240, a - 30, 200);
+line(a - 30, 280, a - 25, 240);
+line(a - 25, 320, a - 30, 280);
+line(a - 30, 360, a - 25, 320);
+
+/*copies the vines to the right.
+to remember/explain in better words:
+- everytime the loop finishes drawing 1 vine,
+it adds +80 to "a", which changes the starting position of the next vine.
+this also makes it repeat within the canvas instead of the vines being drawn ontop of each other.*/
+a = a + 80;
+}
+
 //another flower pattern:
   //variables; b = x, c = y
   let b = 55; //sets the starting horizontal position of the flower.(left to right)
@@ -44,32 +69,7 @@ background(50);
   c = c + 80; //copies flowers 80 down.
   }
   b = b + 80; //copies flowers 80 right.
-} 
-
-//line pattern vines
-  let a = 55; // sets the variable for the starting positon of the vine.
-  while (a < width) { //copies the vines across the canvas.
-
-  //the vines
-  stroke("darkviolet");
-  strokeWeight(4);
-  line(a, 10, a - 5, 50);
-  line(a - 5, 50, a, 80);
-  line(a - 5, 110, a, 80);
-  line(a, 160, a - 5, 110);
-  line(a - 5, 200, a, 160);
-  line(a, 240, a - 5, 200);
-  line(a - 5, 280, a, 240);
-  line(a, 320, a - 5, 280);
-  line(a - 5, 360, a, 320);
-
-  /*copies the vines to the right.
-  to remember/explain in better words:
-  everytime the loop finishes drawing 1 vine,
-  it adds +80 to "a", which changes the starting position of the next vine.
-  this also makes it repeat within the canvas instead of the vines being drawn ontop of each other.*/
-  a = a + 80;
-  }
+}
 
 }
 
