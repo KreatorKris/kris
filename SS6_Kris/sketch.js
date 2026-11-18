@@ -51,8 +51,7 @@ background(255, 195, 0);
 //fill in middle
   circle(250, 50, 25);
 
-
-//ornaments
+  //ornaments
   strokeWeight(2)
   stroke("black")
   line(40, 60, 40, 45);
@@ -60,23 +59,25 @@ background(255, 195, 0);
   circle(40, 60, 20);
 
 //more ornaments
-  for(let i = 0; i < x.length; i++) { /*the for loop repeats the code for every ornament in the arrays.
-  "i" starts at 0 but increases by 1 each time until it reaches the number of ornaments.
+  for(let i = 0; i < x.length; i++) { /*the for loop repeats the ornament code for every ornament in the arrays.
+  "i" starts at 0 but increases by 1 each time until it reaches the number of ornaments. (the array slots)
   its like: i = what will happen, 0 = first ornament, 1 = second ornament, 2 = third ornament, etc..*/
-  stroke("black");
   strokeWeight(2);
-  line(x[i], y[i], x[i], y[i] - 15); //line uses x1, y1, x2, y2. -15 moves the end of the line 15 up.
+  stroke("black")
+  line(x[i], y[i], x[i], y[i] - 15); //line uses x1, y1, x2, y2. -15 moves the end of the line 15 up. (always keeps the line ontop of the ornament)
   fill("red");
-  circle(x[i], y[i], 20);} //will draw the red circle at the saved x and y position. 20 means 20 wide
+  circle(x[i], y[i], 20);} //will draw the red circle at the saved x and y position. 20 means 20 wide (keeps the circle in its consisant size)
 }
 /*NTS: the "for" loop goes through all the positions saved in the arrays and draws a circle&line for every ornament.*/
 
 
 //add ornaments when mouse is pressed
 function mousePressed() {
+if (mouseX > 60 && mouseX < 440) { /*the if statement will check if the mouse is between 60 and 440(the tree).
+if it is, an ornament will be added to the tree, if not then nothing will be added.*/
 x.push(mouseX); //saves the mouses horiztonal positon in xray
-y.push(mouseY); //saves the mouses verticl positon in the yray
-}
+y.push(mouseY); //saves the mouses vertical positon in the yray
+}}
 
 //delete ornaments when a key is pressed
 function keyPressed() {
