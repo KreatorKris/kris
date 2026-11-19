@@ -1,6 +1,7 @@
 /*Kris M.
 Title: The process of putting up a christmas tree
-Instructions: 
+Instructions: Press your mouse to put up ornaments onto the tree!
+To remove the ornaments, press any key.
 
 
 */
