@@ -8,7 +8,7 @@ To remove the ornaments, press any key.
 
 //declaring variables, but these are the 2 arrays
 let x = [] //stores the horiztonal position(left/right)
-let y = [] //stores the vertical posistion(up/down)
+let y = [] //stores the vertical position(up/down)
 
 function setup() { //runs once the sketch starts
 createCanvas(500, 500); //the canvas
