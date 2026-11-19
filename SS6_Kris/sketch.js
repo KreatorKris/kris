@@ -52,7 +52,7 @@ background(255, 195, 0);
 //fill in middle
   circle(250, 50, 25);
 
-  //ornaments
+  //ornament
   strokeWeight(2)
   stroke("black")
   line(40, 60, 40, 45);
@@ -69,7 +69,8 @@ background(255, 195, 0);
   fill("red");
   circle(x[i], y[i], 20);} //will draw the red circle at the saved x and y position. 20 means 20 wide (keeps the circle in its consisant size)
 }
-/*NTS: the "for" loop goes through all the positions saved in the arrays and draws a circle&line for every ornament.*/
+/*NTS: the "for" loop goes through all the positions saved in the arrays and draws a circle&line for every ornament.
+the array is saving where to draw and the loop goes through the saved place to draw and draws it.*/
 
 
 //add ornaments when mouse is pressed
