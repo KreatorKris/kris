@@ -15,7 +15,7 @@ createCanvas(500, 500); //the canvas
 }
 
 
-function draw(){
+function draw(){ //will draw tree, stars and ornaments in {}
 background(255, 195, 0);
   
 //the tree
